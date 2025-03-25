@@ -161,7 +161,7 @@ password: admin123
 }
 ```
 
-### 2. Assign Task to a User
+### 3. Assign Task to a User
 
 **POST** `http://127.0.0.1:8000/api/v1/tasks/assign`
 
@@ -180,5 +180,28 @@ password: admin123
 {
     "reason": "OK",
     "message": "Task assigned successfully"
+}
+```
+
+### 4. Get Tasks for a Specific User
+
+**GET** `http://127.0.0.1:8000/api/v1/tasks/users/<int:user_id>`
+
+#### Response Body:
+
+```bash
+{
+    "reason": "OK",
+    "message": "Tasks fetched successfully",
+    "data": [
+        {
+            "id": 2,
+            "description": "Deploy the backend"
+        },
+        {
+            "id": 1,
+            "description": "Create the wireframe and UI for homepage"
+        }
+    ]
 }
 ```
