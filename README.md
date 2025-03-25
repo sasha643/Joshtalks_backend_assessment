@@ -33,8 +33,8 @@ Make sure you have the following installed:
 
 - Python 3.11 or higher
 - pip
-- Docker & Docker Compose (optional for Dockerized setup)
-- PostgreSQL (or SQLite for local testing)
+- Docker
+- SQLite
 
 ---
 
@@ -45,3 +45,60 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/sasha643/Joshtalks_backend_assessment.git
 cd Joshtalks_backend_assessment
+```
+
+## Running the Project
+
+### Running Locally
+
+1. Create and activate virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Apply migrations:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+4. Create a superuser:
+
+```bash
+python manage.py createsuperuser
+```
+
+5. Run the development server:
+
+```bash
+python manage.py runserver
+```
+
+### Running using Docker
+
+1. Build the Docker image:
+
+```bash
+docker build -t taskmanager-app .
+```
+
+2. Run the container:
+
+```bash
+docker run -p 8000:8000 taskmanager-app
+```
+
+**NOTE:** On container start, migrations will be applied automatically via entrypoint.sh and superuser will be created with credentials:  
+
+username: admin  
+email: admin@gmail.com  
+password: admin123  
