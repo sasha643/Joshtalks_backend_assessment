@@ -115,6 +115,7 @@ password: admin123
 {
   "username": "saurabh1211",
   "email": "saurabh@example.com",
+  "name": "saurabh",
   "mobile": "9876543210",
   "password": "testpass123"
 }
@@ -129,7 +130,7 @@ password: admin123
   "data": {
     "id": 1,
     "username": "saurabh1211",
-    "name": null,
+    "name": "saurabh",
     "email": "saurabh@example.com",
     "mobile": "9876543210"
   }
