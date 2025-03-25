@@ -205,3 +205,8 @@ password: admin123
     ]
 }
 ```
+
+**NOTE**:
+If you're running the application using Docker, replace 127.0.0.1 with localhost in the API URLs.
+Example:
+```bash http://127.0.0.1:8000 ``` → ```bash http://localhost:8000 ```
