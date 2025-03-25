@@ -12,7 +12,6 @@
     - [Using Docker](#running-using-docker)
 - [API Endpoints](#api-endpoints)
 - [API Example](#api-example)
-- [Swagger UI](#swagger-ui)
 
 ## Project Description
 
@@ -33,7 +32,7 @@ Make sure you have the following installed:
 
 - Python 3.11 or higher
 - pip
-- Docker
+- Docker (If running using docker)
 - SQLite
 
 ---
