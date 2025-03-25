@@ -136,3 +136,27 @@ password: admin123
   }
 }
 ```
+
+### Create Task
+
+**POST** `http://127.0.0.1:8000/api/v1/tasks/create`
+
+#### Request Body:
+
+```bash
+{
+  "name": "Homepage UI Design",
+  "description": "Design the initial wireframes and high-fidelity mockups for the homepage. Ensure responsiveness and alignment with the brand guidelines.",
+  "task_type": "Design",
+  "status": "Pending"
+}
+```
+
+#### Response Body:
+
+```bash
+{
+    "reason": "Created",
+    "message": "Task created successfully"
+}
+```
