@@ -105,7 +105,7 @@ password: admin123
 
 ## API Endpoints
 
-### Register User
+### 1. Register User
 
 **POST** `http://127.0.0.1:8000/api/v1/users/register`
 
@@ -137,7 +137,7 @@ password: admin123
 }
 ```
 
-### Create Task
+### 2. Create Task
 
 **POST** `http://127.0.0.1:8000/api/v1/tasks/create`
 
@@ -158,5 +158,27 @@ password: admin123
 {
     "reason": "Created",
     "message": "Task created successfully"
+}
+```
+
+### 2. Assign Task to a User
+
+**POST** `http://127.0.0.1:8000/api/v1/tasks/assign`
+
+#### Request Body:
+
+```bash
+{
+  "task_id": 1,
+  "user_ids": [1, 2, 3]
+}
+```
+
+#### Response Body:
+
+```bash
+{
+    "reason": "OK",
+    "message": "Task assigned successfully"
 }
 ```
