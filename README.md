@@ -97,7 +97,8 @@ docker build -t taskmanager-app .
 docker run -p 8000:8000 taskmanager-app
 ```
 
-**NOTE:** On container start, migrations will be applied automatically via entrypoint.sh and superuser will be created with credentials:
-<u>username</u>: admin
+**NOTE:** On container start, migrations will be applied automatically via entrypoint.sh and superuser will be created with credentials:  
+
+username: admin
 email: admin@gmail.com
 password: admin123
