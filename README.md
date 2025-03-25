@@ -33,8 +33,8 @@ Make sure you have the following installed:
 
 - Python 3.11 or higher
 - pip
-- Docker & Docker Compose (optional for Dockerized setup)
-- PostgreSQL (or SQLite for local testing)
+- Docker
+- SQLite
 
 ---
 
