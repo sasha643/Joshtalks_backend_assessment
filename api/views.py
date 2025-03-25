@@ -1,11 +1,61 @@
 from rest_framework import generics
 from rest_framework.views import APIView
 from rest_framework.response import Response
+
+from django.contrib.auth.hashers import make_password
 from django.shortcuts import get_object_or_404
+
 from .models import Task, User
 from .serializers import *
 from http import HTTPStatus
 
+
+class UserRegisterAPIView(APIView):
+    def post(self, request):
+        data = request.data.copy()
+
+        required_fields = ['username', 'email', 'mobile', 'password']
+        missing_fields = [field for field in required_fields if field not in data or not data[field]]
+        if missing_fields:
+            return Response(
+                {
+                    "reason": HTTPStatus.BAD_REQUEST.phrase,
+                    "message": f"Missing fields: {', '.join(missing_fields)}"
+                },
+                status=HTTPStatus.BAD_REQUEST.value
+            )
+
+        if User.objects.filter(username=data['username']).exists():
+            return Response(
+                {
+                    "reason": HTTPStatus.CONFLICT.phrase,
+                    "message": "Username already exists"
+                },
+                status=HTTPStatus.CONFLICT.value
+            )
+
+        if User.objects.filter(email=data['email']).exists():
+            return Response(
+                {
+                    "reason": HTTPStatus.CONFLICT.phrase,
+                    "message": "Email already registered"
+                },
+                status=HTTPStatus.CONFLICT.value
+            )
+
+        hashed_password = make_password(data.pop('password'))
+        user = User.objects.create(**data, password=hashed_password)
+
+        serializer = UserSerializer(user)
+        return Response(
+            {
+                "reason": HTTPStatus.CREATED.phrase,
+                "message": "User registered successfully",
+                "data": serializer.data
+            },
+            status=HTTPStatus.CREATED.value
+        )
+    
 
 class TaskCreateAPIView(generics.CreateAPIView):
     queryset = Task.objects.all()
@@ -97,6 +147,15 @@ class UserTasksAPIView(APIView):
             )
 
         tasks = user.tasks.all()
+        if not tasks.exists():
+            return Response(
+                {
+                    "reason": HTTPStatus.NOT_FOUND.phrase,
+                    "message": "No tasks assigned to this user"
+                },
+                status=HTTPStatus.NOT_FOUND.value
+            )
+
         serializer = TaskSerializer(tasks, many=True)
         return Response(
             {
