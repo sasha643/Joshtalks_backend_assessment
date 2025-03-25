@@ -45,6 +45,7 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/sasha643/Joshtalks_backend_assessment.git
 cd Joshtalks_backend_assessment
+```
 
 ## Running the Project
 
