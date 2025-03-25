@@ -45,3 +45,39 @@ Make sure you have the following installed:
 ```bash
 git clone https://github.com/sasha643/Joshtalks_backend_assessment.git
 cd Joshtalks_backend_assessment
+
+## Running the Project
+
+### Running Locally
+
+1. Create and activate virtual environment:
+
+```bash
+python -m venv venv
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
+
+2. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Apply migrations:
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+4. Create a superuser:
+
+```bash
+python manage.py createsuperuser
+```
+
+5. Run the development server:
+
+```bash
+python manage.py runserver
+```
