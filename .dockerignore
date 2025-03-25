@@ -1,0 +1,29 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# SQLite database
+*.sqlite3
+db.sqlite3
+
+# Migrations (optional — exclude if you recreate them in container)
+**/migrations/*.pyc
+**/migrations/*.py~
+
+# OS junk
+.DS_Store
+
+# Editor config
+.vscode/
+.idea/
+
+# Git
+.git
