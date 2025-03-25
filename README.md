@@ -43,5 +43,5 @@ Make sure you have the following installed:
 ### Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/taskmanager.git
-cd taskmanager
+git clone https://github.com/sasha643/Joshtalks_backend_assessment.git
+cd Joshtalks_backend_assessment
