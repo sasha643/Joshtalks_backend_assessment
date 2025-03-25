@@ -101,3 +101,37 @@ docker run -p 8000:8000 taskmanager-app
 username: admin  
 email: admin@gmail.com  
 password: admin123  
+
+
+## API Endpoints
+
+### Register User
+
+**POST** `http://127.0.0.1:8000/api/v1/users/register`
+
+#### Request Body:
+
+```bash
+{
+  "username": "saurabh1211",
+  "email": "saurabh@example.com",
+  "mobile": "9876543210",
+  "password": "testpass123"
+}
+```
+
+#### Response Body:
+
+```bash
+{
+  "reason": "Created",
+  "message": "User registered successfully",
+  "data": {
+    "id": 1,
+    "username": "saurabh1211",
+    "name": null,
+    "email": "saurabh@example.com",
+    "mobile": "9876543210"
+  }
+}
+```
