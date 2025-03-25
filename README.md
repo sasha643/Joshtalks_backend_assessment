@@ -37,18 +37,18 @@ Make sure you have the following installed:
 
 ---
 
-## Installation
+### Installation
 
-### Clone the repository:
+#### Clone the repository:
 
 ```bash
 git clone https://github.com/sasha643/Joshtalks_backend_assessment.git
 cd Joshtalks_backend_assessment
 ```
 
-## Running the Project
+### Running the Project
 
-### Running Locally
+#### Running Locally
 
 1. Create and activate virtual environment:
 
@@ -82,7 +82,7 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
-### Running using Docker
+#### Running using Docker
 
 1. Build the Docker image:
 
