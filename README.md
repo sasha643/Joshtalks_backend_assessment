@@ -102,6 +102,7 @@ username: admin
 email: admin@gmail.com  
 password: admin123  
 
+---
 
 ## API Endpoints
 
@@ -211,6 +212,7 @@ If you're running the application using Docker, replace 127.0.0.1 with localhost
 Example:
 ```http://127.0.0.1:8000 ``` → ```http://localhost:8000 ```
 
+---
 
 ## Conclusion
 
