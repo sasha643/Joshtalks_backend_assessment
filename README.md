@@ -115,7 +115,7 @@ password: admin123
 ```bash
 {
   "username": "saurabh1211",
-  "email": "saurabh@example.com",
+  "email": "saurabh@gmail.com",
   "name": "saurabh",
   "mobile": "9876543210",
   "password": "testpass123"
@@ -132,7 +132,7 @@ password: admin123
     "id": 1,
     "username": "saurabh1211",
     "name": "saurabh",
-    "email": "saurabh@example.com",
+    "email": "saurabh@gmail.com",
     "mobile": "9876543210"
   }
 }
@@ -206,11 +206,6 @@ password: admin123
     ]
 }
 ```
-
-**NOTE**:
-If you're running the application using Docker, replace 127.0.0.1 with localhost in the API URLs.
-Example:
-```http://127.0.0.1:8000 ``` → ```http://localhost:8000 ```
 
 ---
 
